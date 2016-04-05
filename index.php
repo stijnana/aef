@@ -3,6 +3,9 @@
 #index.php
 
 require_once __DIR__ . '/vendor/autoload.php';
+require 'includes/config.php';
+require_once 'includes/database.php';
+
 
 // functions
 include 'functions.php';
@@ -36,7 +39,17 @@ try {
 
     <?php
     echo "</pre>";
-    displayData($user);
+
+
+
+
+    //displayData($user);
+    $id = $user['id'];
+    $name = $user['name'];
+    //echo $id;
+    //echo $name;
+    $sql = "INSERT INTO acount_data (facebookId, facebookName) VALUES ( '$id', '$name')";
+    echo $sql;
 
     exit;
 }
