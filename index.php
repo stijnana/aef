@@ -9,9 +9,13 @@ include 'functions.php';
 
 session_start();
 
+//include de header met links
+include 'views/header.php';
+
+
 $fb = new Facebook\Facebook([
-    'app_id' => '109552819442627',
-    'app_secret' => 'c14e8f9a29048f95da75b5107a7b3333',
+    'app_id' => '1588369618156841',
+    'app_secret' => '1053fbdcb5833fcaf743df26e1c4e831',
     'default_graph_version' => 'v2.5',
     'default_access_token' => isset($_SESSION['facebook_access_token']) ? $_SESSION['facebook_access_token'] : 'c14e8f9a29048f95da75b5107a7b3333'
 
@@ -26,7 +30,6 @@ try {
 
     echo "<pre>";
     ?>
-
 
     <li><a href="logout.php">Logout</a></li>
 
@@ -45,22 +48,21 @@ try {
     catch (Facebook\Exceptions\FacebookSDKException $e){
         //echo 'Facebook SDK returned an error: ' . $e->getMessage();
 }
-
+?>
+<div class="container-fluid">
+    <h1></h1>
+</div>
+<div class="container">
+<?php
 $helper = $fb->getRedirectLoginHelper();
 
 //$permissions = ['email','user_likes'];
 $permissions = [];
-$loginUrl = $helper->getLoginUrl('http://localhost/leerjaar2/periode3/proj/aef/login-callback.php', $permissions);
+$loginUrl = $helper->getLoginUrl('http://localhost:8887/aef/login-callback.php', $permissions);
 
 echo '<a href="'. $loginUrl . '">Log in with Facebook!</a>';
-
-//
-//$permissions = [];
-//$loginUrl = $helper->getLoginUrl('http://localhost:8887/aef/login-callback.php', $permissions);
-//
-//echo '<a href="'. $loginUrl . '">Log in with Facebook!</a>';
-
-
+?>
+</div>
 
 
 

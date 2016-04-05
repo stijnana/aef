@@ -6,8 +6,8 @@ require_once __DIR__ . '/vendor/autoload.php';
 session_start();
 
 $fb = new Facebook\Facebook([
-    'app_id' => '109552819442627',
-    'app_secret' => 'c14e8f9a29048f95da75b5107a7b3333',
+    'app_id' => '1588369618156841',
+    'app_secret' => '1053fbdcb5833fcaf743df26e1c4e831',
     'default_graph_version' => 'v2.5',
     'default_access_token' => isset($_SESSION['facebook_access_token']) ? $_SESSION['facebook_access_token'] : 'c14e8f9a29048f95da75b5107a7b3333'
 
