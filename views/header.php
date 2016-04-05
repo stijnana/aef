@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/animate.css">
 </head>
 <body>
 <!--[if lt IE 10]>

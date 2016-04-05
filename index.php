@@ -31,17 +31,12 @@ try {
     //Maakt van de response de variable $user
     $user = $response->getGraphObject();
 
-    echo "<pre>";
     ?>
 
     <li><a href="logout.php">Logout</a></li>
 
 
     <?php
-    echo "</pre>";
-
-
-
 
     //displayData($user);
     $id = $user['id'];
@@ -62,20 +57,38 @@ try {
         //echo 'Facebook SDK returned an error: ' . $e->getMessage();
 }
 ?>
-<div class="container-fluid">
-    <h1></h1>
-</div>
-<div class="container">
-<?php
-$helper = $fb->getRedirectLoginHelper();
+<div class="container-fluid no-padding">
+    <div class="wrap">
+        <div class="hwrap">
+    <h1 class=" h1aef wow fadeInUp" data-wow-duration="2s" data-wow-delay="0s">anna elizabeth foundation</h1>
+        </div>
+        <br>
+        <?php
+        $helper = $fb->getRedirectLoginHelper();
 
-//$permissions = ['email','user_likes'];
-$permissions = [];
-$loginUrl = $helper->getLoginUrl('http://localhost:8887/aef/login-callback.php', $permissions);
+        //$permissions = ['email','user_likes'];
+        $permissions = [];
+        $loginUrl = $helper->getLoginUrl('http://localhost:8887/aef/login-callback.php', $permissions);
 
-echo '<a href="'. $loginUrl . '">Log in with Facebook!</a>';
-?>
+        echo '<a href="'. $loginUrl . '"><button type="button" class="fbbtn btn btn-primary wow fadeInUp" data-wow-duration="2s" data-wow-delay="1s">Log in with Facebook</button></a>';
+        ?>
+    </div>
 </div>
+<script src="js/wow.min.js"></script>
+<script>
+    new WOW().init();
+</script>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
