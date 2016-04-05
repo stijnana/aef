@@ -3,6 +3,7 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
+
 session_start();
 
 $fb = new Facebook\Facebook([
@@ -29,6 +30,7 @@ if (isset($accessToken)){
 } elseif ($helper->getError()){
     //The user denied the request
 }
+
 
 header('Location: index.php');
 ?>
