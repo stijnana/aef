@@ -15,8 +15,22 @@
     height: 100vh;
     background-size: cover;
 }
+.wrap2{
+    background-image: url("http://i.huffpost.com/gen/1398931/images/o-OLDER-MAN-SAD-facebook.jpg");
+    text-transform: uppercase;
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+}
 .hwrap{
     padding-top: 50vh;
+}
+.hwrap2{
+    padding-top: 43vh;
+}
+.wrap2 p{
+    color: #555555;
 }
 .fbbtn{
 }
