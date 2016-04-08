@@ -2,7 +2,7 @@
 #login-callback.php
 
 require_once __DIR__ . '/vendor/autoload.php';
-
+include "functions.php";
 
 session_start();
 
@@ -13,6 +13,8 @@ $fb = new Facebook\Facebook([
     'default_access_token' => isset($_SESSION['facebook_access_token']) ? $_SESSION['facebook_access_token'] : 'c14e8f9a29048f95da75b5107a7b3333'
 
 ]);
+
+insertUsers();
 
 $helper = $fb->getRedirectLoginHelper();
 

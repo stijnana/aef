@@ -1,9 +1,10 @@
 <?php
+header("refresh:3;url=index.php");
 session_start();            //start session
 include 'views/header.php';
 $_SESSION = array();    //clear session array
 session_destroy();      //destroy session
-header( "refresh:3;url=index.php" );
+
 ?>
 <div class="container-fluid no-padding">
     <div class="wrap2">
@@ -13,3 +14,8 @@ header( "refresh:3;url=index.php" );
         <p >you are getting redirected to the loginpage</p>
     </div>
 </div>
+<script src="js/wow.min.js"></script>
+<script>
+    new WOW().init();
+</script>
+

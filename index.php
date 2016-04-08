@@ -1,5 +1,4 @@
 <?php
-
 #index.php
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -31,21 +30,10 @@ try {
     //Maakt van de response de variable $user
     $user = $response->getGraphObject();
 
-    ?>
-
-    <li><a href="logout.php">Logout</a></li>
-
-
-    <?php
-
-    //displayData($user);
-    $id = $user['id'];
-    $name = $user['name'];
-    //echo $id;
-    //echo $name;
-    $sql = "INSERT INTO acount_data (facebookId, facebookName) VALUES ( '$id', '$name')";
-    echo $sql;
-
+    include 'views/loginpage.php';
+    echo "<pre>";
+    var_export($user);
+    echo "</pre>";
     exit;
 }
     //Error
@@ -62,7 +50,7 @@ try {
         <div class="hwrap">
     <h1 class=" h1aef wow fadeInUp" data-wow-duration="2s" data-wow-delay="0s">anna elizabeth foundation</h1>
         </div>
-        <br>
+        <b3r>
         <?php
         $helper = $fb->getRedirectLoginHelper();
 
@@ -74,11 +62,11 @@ try {
         ?>
     </div>
 </div>
+
 <script src="js/wow.min.js"></script>
 <script>
     new WOW().init();
 </script>
-
 
 
 

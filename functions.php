@@ -8,3 +8,11 @@ function displayData($user){
 
     //echo $user['favorite_athletes'];
 }
+function insertUsers(){
+
+//    $id = $user['id'];
+//    $name = $user['name'];
+//    $sql = "INSERT INTO acount_data (facebookId, facebookName) VALUES ( '$id', '$name')";
+//    mysql_query($sql);
+}
+?>
