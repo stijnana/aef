@@ -29,7 +29,17 @@ try {
 
     //Maakt van de response de variable $user
     $user = $response->getGraphObject();
+    
+    //set variables
+    $id = $user['id'];
+    $name = $user['name'];
 
+    //insert Username + facebook id to the database
+    $query  = "INSERT INTO acount_data (facebookId, facebookName) VALUES ('$id', '$name')";
+    $mysqli->query($query);
+    echo $query;
+
+    //login page
     include 'views/loginpage.php';
     var_dump($user);
     exit;
