@@ -31,9 +31,7 @@ try {
     $user = $response->getGraphObject();
 
     include 'views/loginpage.php';
-    echo "<pre>";
-    var_export($user);
-    echo "</pre>";
+    var_dump($user);
     exit;
 }
     //Error
