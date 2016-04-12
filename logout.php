@@ -11,7 +11,7 @@ session_destroy();      //destroy session
         <div class="hwrap2">
         <h1 class=" h1aef wow fadeInUp" data-wow-duration="2s" data-wow-delay="0s">You are logged out</h1>
         </div>
-        <p >you are getting redirected to the loginpage</p>
+        <p class="wow fadeInUp" data-wow-duration="2s" data-wow-delay="1s" >you are getting redirected to the loginpage</p>
     </div>
 </div>
 <script src="js/wow.min.js"></script>

@@ -29,19 +29,34 @@ try {
 
     //Maakt van de response de variable $user
     $user = $response->getGraphObject();
-    
+
+    // check if ID exists
+
+
     //set variables
     $id = $user['id'];
     $name = $user['name'];
 
-    //insert Username + facebook id to the database
-    $query  = "INSERT INTO acount_data (facebookId, facebookName) VALUES ('$id', '$name')";
-    $mysqli->query($query);
-    echo $query;
+    $data = $mysqli->query('SELECT facebookId FROM acount_data WHERE facebookId = '. $id);
+
+    $fbid = $data->num_rows;
+
+    if($fbid == 0) {
+        //insert Username + facebook id to the database
+        $query  = "INSERT INTO acount_data (facebookId, facebookName) VALUES ('$id', '$name')";
+        $mysqli->query($query);
+    }
+    else{
+//        echo "this id exists";
+    }
+
+
 
     //login page
     include 'views/loginpage.php';
-    var_dump($user);
+    echo "<pre>";
+    var_export($user);
+    echo "</pre>";
     exit;
 }
     //Error
