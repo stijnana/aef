@@ -1,9 +1,7 @@
 <?php
 //nav
 include 'views/nav.php';
-$id = 1;
-//waardes
-$quiz = "quiz";
+
 //switch
 switch ($_GET['page']) {
     //startpage of the quiz
@@ -15,14 +13,15 @@ switch ($_GET['page']) {
 
 
     case 'quiz';
-        switch(isset($_GET['id']) ? $_GET['id'] : "id bestaat niet") {
-            case $id :
+        $pageid = $_REQUEST['id'];
+        switch(isset($_GET['id']) ? $_GET['id'] : "no"){
+            case $pageid :
+                include "views/quiz.php";
+            break;
 
-                break;
-
-            //default 404
-//            default :
-//                break;
+//          default = #404
+            default :
+            break;
         }
 
 

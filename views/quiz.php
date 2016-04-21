@@ -5,19 +5,44 @@
 
 </div>
 <div class="container">
-<form method="post">
-    <?php
-    $data = $mysqli->query("SELECT * FROM questions , Answers , acount_data");
 
+    <?php
+
+    $id = $_REQUEST['id'];
+    $item = $mysqli->prepare("SELECT * FROM questions WHERE id = ?");
+    $item->bind_param('i', $id);
+    $item->execute();
+    $result = $item->get_result();
+    if($pageid < 11) {
+    $items = $result->fetch_all();
+    ?>
+    <form method="post">
+        <h1><?php echo $items[0][1] ?></h1>
+        <?php
+        var_dump($items);
+        if (strlen($items[0][2]) > 0) {
+            echo "<p>", " <input type='radio' name='answer' value='1'>"," " . $items[0][2] . "</p>";
+        }
+        if (strlen($items[0][3]) > 0) {
+            echo "<p>", " <input type='radio' name='answer' value='1'>" . $items[0][3] . "</p>";
+        }
+        if (strlen($items[0][4]) > 0) {
+            echo "<p>", " <input type='radio' name='answer' value='1'>" . $items[0][4] . "</p>";
+        }
+        if (strlen($items[0][5]) > 0) {
+        echo "<p>", " <input type='radio' name='answer' value='1'>" . $items[0][5] . "</p>";
+        }
+
+?>
+    <p><input type="submit"  name="sendcontact"/></p>
+</form>
+    <?php
+        }else {
+        die("This question doesn't exists");
+    }
     ?>
 
-    <p>andwoord 1 <input type="radio" name="answer" value="1"></p>
-    <p>andwoord 2 <input type="radio" name="answer" value="2"></p>
-    <p>andwoord 3 <input type="radio" name="answer" value="3"></p>
-    <p>andwoord 4 <input type="radio" name="answer" value="4"></p>
-    <p><input type="submit"  name="sendcontact"/></p>
 
-</form>
 <?php
 if(isset($_POST['sendcontact']))
 {

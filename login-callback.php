@@ -33,7 +33,6 @@ if (isset($accessToken)){
     //The user denied the request
 }
 
-
-header('Location: index.php');
+header('Location: index.php?page=home');
 ?>
 

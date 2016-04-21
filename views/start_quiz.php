@@ -14,7 +14,7 @@ vrijwel onveranderd, overgenomen in elektronische letterzetting. Het is in de ja
 ?>
 <br>
 <br>
-<a href="?page=quiz"><button type="button" class=" aefcolor btn btn-primary" >Start de quiz !</button></a>
+<a href="?page=quiz&id=1"><button type="button" class=" aefcolor btn btn-primary" >Start de quiz !</button></a>
         </div>
     </div>
 </div>
