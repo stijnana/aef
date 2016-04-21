@@ -16,10 +16,10 @@ include 'views/header.php';
 
 
 $fb = new Facebook\Facebook([
-    'app_id' => '109552819442627',
-    'app_secret' => 'c14e8f9a29048f95da75b5107a7b3333',
+    'app_id' => '1588369618156841',
+    'app_secret' => '1053fbdcb5833fcaf743df26e1c4e831',
     'default_graph_version' => 'v2.5',
-    'default_access_token' => isset($_SESSION['facebook_access_token']) ? $_SESSION['facebook_access_token'] : 'c14e8f9a29048f95da75b5107a7b3333'
+    'default_access_token' => isset($_SESSION['facebook_access_token']) ? $_SESSION['facebook_access_token'] : '1053fbdcb5833fcaf743df26e1c4e831'
 
 ]);
 
@@ -50,13 +50,30 @@ try {
         //echo "this id exists";
     }
 
+?>
+    <script>// Test for the ugliness.
+        if (window.location.hash == '#_=_'){
 
+            // Check if the browser supports history.replaceState.
+            if (history.replaceState) {
 
+                // Keep the exact URL up to the hash.
+                var cleanHref = window.location.href.split('#')[0];
+
+                // Replace the URL in the address bar without messing with the back button.
+                history.replaceState(null, null, 'index.php?page=home');
+
+            } else {
+
+                // Well, you're on an old browser, we can get rid of the _=_ but not the #.
+                window.location.hash = '';
+
+            }
+
+        }</script>
+<?php
     //login page
     include 'views/loginpage.php';
-    echo "<pre>";
-//    var_export($user);
-    echo "</pre>";
     exit;
 }
     //Error
@@ -67,24 +84,11 @@ try {
     catch (Facebook\Exceptions\FacebookSDKException $e){
         //echo 'Facebook SDK returned an error: ' . $e->getMessage();
 }
+
+//login page
+include "views/login.php";
+
 ?>
-<div class="container-fluid no-padding">
-    <div class="wrap">
-        <div class="hwrap">
-    <h1 class=" h1aef wow fadeInUp" data-wow-duration="2s" data-wow-delay="0s">anna elizabeth foundation</h1>
-        </div>
-        <?php
-        $helper = $fb->getRedirectLoginHelper();
-
-        //$permissions = ['email','user_likes'];
-        $permissions = [];
-        $loginUrl = $helper->getLoginUrl('http://localhost/leerjaar2/periode3/aef/login-callback.php', $permissions);
-
-        echo '<a href="'. $loginUrl . '"><button type="button" class="fbbtn btn btn-primary btn-lg wow fadeInUp" data-wow-duration="2s" data-wow-delay="1s">Log in with Facebook</button></a>';
-        ?>
-    </div>
-</div>
-
 <script src="js/wow.min.js"></script>
 <script>
     new WOW().init();

@@ -14,7 +14,7 @@ setlocale(LC_ALL, 'nl_NL');
         define('DB_HOST','localhost');
         define('DB_NAME','eaf_db');
         define('DB_USERNAME','root');
-        define('DB_PASSWORD','');
+        define('DB_PASSWORD','root');
 
 
 ?>

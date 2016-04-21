@@ -23,14 +23,32 @@
     height: 100vh;
     background-size: cover;
 }
+.wrap3{
+    background-position: 100% 55%;
+    background-image: url("http://i.huffpost.com/gen/1939820/images/o-ALZHEIMERS-facebook.jpg");
+    text-transform: uppercase;
+    text-align: center;
+    width: 100vw;
+    height: 50vh;
+    background-size: cover;
+}
 .hwrap{
     padding-top: 50vh;
 }
 .hwrap2{
     padding-top: 43vh;
 }
+.hwrap3{
+    font-size: 4em;
+    color: #fff;
+    padding-top: 22vh;
+    margin: 0;
+}
 .wrap2 p{
     color: #555555;
+}
+.navbar{
+    margin-bottom: 0!important;
 }
 .fbbtn{
 }
@@ -44,4 +62,8 @@
     color: #fff;
     margin: 0;
 
+}
+.aefcolor{
+    background-color: #f49ac1!important;
+    border-color: #f482b4!important;
 }
