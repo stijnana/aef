@@ -16,43 +16,32 @@
     if($pageid < 11) {
     $items = $result->fetch_all();
     ?>
+        <br>
     <form method="post">
-        <h1><?php echo $items[0][1] ?></h1>
+        <h1><?php echo $items[0][0]?> : <?php echo $items[0][1] ?></h1>
         <?php
         var_dump($items);
-        if (strlen($items[0][2]) > 0) {
-            echo "<p>", " <input type='radio' name='answer' value='1'>"," " . $items[0][2] . "</p>";
+        for($i = 2; $i <= 5; $i++){
+            if (strlen($items[0][$i]) > 0) {
+                echo "<div class='input-group'> <span class=\"input-group-addon\"> <input type='radio' name='answer' value='answer1' aria-label=''></span> <p class='form-control'>" . $items[0][$i] . "</p></div>";
+                echo "<br>";
+            }
         }
-        if (strlen($items[0][3]) > 0) {
-            echo "<p>", " <input type='radio' name='answer' value='1'>" . $items[0][3] . "</p>";
-        }
-        if (strlen($items[0][4]) > 0) {
-            echo "<p>", " <input type='radio' name='answer' value='1'>" . $items[0][4] . "</p>";
-        }
-        if (strlen($items[0][5]) > 0) {
-        echo "<p>", " <input type='radio' name='answer' value='1'>" . $items[0][5] . "</p>";
-        }
-
 ?>
-    <p><input type="submit"  name="sendcontact"/></p>
+    <p><input class="aefcolor fbbtn btn btn-primary btn-lg" type="submit" name="sendcontact"/></p>
 </form>
     <?php
         }else {
-        die("This question doesn't exists");
+        die("<h1>This question doesn't exists</h1>");
     }
-    ?>
-
-
-<?php
-if(isset($_POST['sendcontact']))
-{
+    if(isset($_POST['sendcontact']))
+    {
     $test = $_POST['answer'];
     echo $test;
     $query  = "INSERT INTO questions (facebookId, facebookName) VALUES ('$id', '$name')";
     $mysqli->query($query);
-}
+    }
 ?>
-
 </form>
 </div>
 <script src="js/wow.min.js"></script>

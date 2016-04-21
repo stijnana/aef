@@ -21,9 +21,14 @@ switch ($_GET['page']) {
 
 //          default = #404
             default :
+                include "views/start_quiz.php";
             break;
         }
+        break;
 
+    case 'account-info';
+        include "views/accountinfo.php";
+        break;
 
 }
 

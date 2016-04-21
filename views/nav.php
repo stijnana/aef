@@ -22,7 +22,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="logout.php">Logout</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="?page=">Acount info</a></li>
+                            <li><a href="?page=account-info">Acount info</a></li>
                         </ul>
                     </li>
                 </ul>
