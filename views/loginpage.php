@@ -14,7 +14,7 @@ switch ($_GET['page']) {
 
     case 'quiz';
         $pageid = $_REQUEST['id'];
-        switch(isset($_GET['id']) ? $_GET['id'] : "no"){
+        switch(isset($_GET['id']) ? $_GET['id'] : "no id found"){
             case $pageid :
                 include "views/quiz.php";
             break;

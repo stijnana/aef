@@ -23,7 +23,7 @@
         var_dump($items);
         for($i = 2; $i <= 5; $i++){
             if (strlen($items[0][$i]) > 0) {
-                echo "<div class='input-group'> <span class=\"input-group-addon\"> <input type='radio' name='answer' value='answer1' aria-label=''></span> <p class='form-control'>" . $items[0][$i] . "</p></div>";
+                echo "<div class='input-group'> <span class=\"input-group-addon\"> <input type='radio' name='answer' value='answer".($i - 1)."' aria-label=''></span> <p class='form-control'>" . $items[0][$i] . "</p></div>";
                 echo "<br>";
             }
         }

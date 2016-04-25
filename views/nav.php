@@ -23,6 +23,8 @@
                             <li><a href="logout.php">Logout</a></li>
                             <li role="separator" class="divider"></li>
                             <li><a href="?page=account-info">Acount info</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="?page=quiz">Quiz</a></li>
                         </ul>
                     </li>
                 </ul>
