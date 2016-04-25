@@ -2,8 +2,8 @@
 <div class="wrap3">
     <h1 class=" hwrap3">Welcome <?php echo $user['name']; ?></h1>
 </div>
-
 </div>
+
 <div class="container">
 
     <?php
@@ -28,18 +28,43 @@
             }
         }
 ?>
-    <p><input class="aefcolor fbbtn btn btn-primary btn-lg" type="submit" name="sendcontact"/></p>
+    <p><input class="aefcolor fbbtn btn btn-primary btn-lg" id="next" type="submit" name="sendcontact" onclick="myFunction()"/></p>
 </form>
+        <?php echo $items[0][0];?>
+
+
     <?php
         }else {
         die("<h1>This question doesn't exists</h1>");
     }
     if(isset($_POST['sendcontact']))
     {
-    $test = $_POST['answer'];
-    echo $test;
-    $query  = "INSERT INTO questions (facebookId, facebookName) VALUES ('$id', '$name')";
-    $mysqli->query($query);
+    $answer = $_POST['answer'];
+        echo $answer;
+
+    if($answer === "answer1"){
+            //insert Answer to database
+            $query  = 'UPDATE `eaf_db`.`Answers` SET `a'.$_REQUEST['id'].'` = "'.$answer.'" WHERE `answers`.`facebookId` ='.$user['id'];
+            $mysqli->query($query);
+        }
+
+        if($answer === "answer2"){
+            //insert Answer to database
+            $query  = 'UPDATE `eaf_db`.`Answers` SET `a'.$_REQUEST['id'].'` = "'.$answer.'" WHERE `answers`.`facebookId` ='.$user['id'];
+            $mysqli->query($query);
+        }
+
+        if($answer === "answer3"){
+            //insert Answer to database
+            $query  = 'UPDATE `eaf_db`.`Answers` SET `a'.$_REQUEST['id'].'` = "'.$answer.'" WHERE `answers`.`facebookId` ='.$user['id'];
+            $mysqli->query($query);
+        }
+
+        if($answer === "answer4"){
+            //insert Answer to database
+            $query  = 'UPDATE `eaf_db`.`Answers` SET `a'.$_REQUEST['id'].'` = "'.$answer.'" WHERE `answers`.`facebookId` ='.$user['id'];
+            $mysqli->query($query);
+        }
     }
 ?>
 </form>

@@ -50,7 +50,16 @@ try {
         //echo "this id exists";
     }
 
-?>
+    $data2 = $mysqli->query('SELECT facebookId FROM Answers WHERE facebookId = '.$id);
+    $fbid2 = $data->num_rows;
+
+    if($fbid2 == 0) {
+        //insert Username + facebook id to the answer db
+        $query  = "INSERT INTO `eaf_db`.`Answers` (`id`, `facebookId`, `a1`, `a2`, `a3`, `a4`, `a5`, `a6`, `a7`, `a8`, `a9`, `a10`) VALUES (NULL, '".$user['id']."', '', '', '', '', '', '', '', '', '', '');";
+        $mysqli->query($query);
+    }
+
+    ?>
     <script>// Test for the ugliness.
         if (window.location.hash == '#_=_'){
 

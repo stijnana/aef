@@ -35,4 +35,3 @@ if (isset($accessToken)){
 
 header('Location: index.php?page=home');
 ?>
-
